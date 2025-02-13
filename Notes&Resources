@@ -1,2 +1,55 @@
 1. Training: Playwright Automation by Mukesh Otwani
    Link: https://www.youtube.com/watch?v=pq20Gd4LXeI
+   Playwright:
+
+site creds: john doe, admin, email: admin@practicesoftwaretesting.com, or customer@ Pass: welcome01
+
+Open source tool built by Microsoft that enables reliable end to end UI and API automation test for moden web apps.
+
+Highlights: 1. Built-in test runner 2. Ability to run tests in parallel with the ability to enable retries 3. Usefull built in reports with screenshots, videos, and trace viewer 4. VS code extention to help in building and maintainig your tests 5. Cross browser testing is built in out of the box 6. Multiple browsers and their drivers are
+
+By installing Node.js you automatically get npm package manager
+
+Npm playwright -v = shows the version of the installed playwright
+
+npm install -D @playwright/test@latest = to update playwright, use this command in vscode terminal
+
+Test Run Commands:
+npx playwright test = runs all tests in headless
+npx playwright test (testName to specify a test) —headed = runs all tests headed
+
+npx playwright test --project=chromium --headed
+
+npx playwright test (testName) --headed --debug = for debug mode
+
+--grep: for taging and grouping
+-npx playwright test -grep @smoke: for taged ones only
+-npx playwright test -grep-invert @first: for all the other tests except for the tagged one
+
+https://www.linkedin.com/learning/learning-playwright/overview-of-package-json?autoSkip=true&resume=false&u=102064650
+
+Not: to change the test run commands in CLI, updat the Pachage.json."scripts":
+
+1. npm run test
+2. npm run test:chromium
+
+Codegen:
+npx playwright codegen = to start the code gen tool
+CTRL C = to end the codegen
+
+- To change/fix the legacy locator[data-test='sing-in] to: getByTestId('sign-in'), need to add the (testIdAttribute: "data-test") to playwright.confi.js.use:
+
+Assertions:
+
+1. Locator Assertions: it automatically retries untill either passes or reaches timeout. Ex: await expect(locator).toBeVisible()
+
+2. Value assertion will be evaluated one time and either pass or fail! EX:
+
+test.only: will execute this test only
+test.skip: will skip this test only
+
+Strict mode violation: when more than one element found. ex: getByAltText("profile picture").first().click() first() will get the first element
+
+setViewPortSize({width:0000,height:0000}) to change the browser size.
+
+Screenshot, video, and trace can be turned on in config under use:.
