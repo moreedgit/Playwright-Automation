@@ -60,3 +60,9 @@ Strict mode violation: when more than one element found. ex: getByAltText("profi
 setViewPortSize({width:0000,height:0000}) to change the browser size.
 
 Screenshot, video, and trace can be turned on in config under use:
+
+Test Annotations:
+test.describe("group name"): for grouping the test
+Some usefull methods: test.skip, test.only,
+test.fail(): will fail the test for documentation purposes
+test.slow(): will give triple or more time for for the test to run, specialy for the failing part
