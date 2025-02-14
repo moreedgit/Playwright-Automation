@@ -45,6 +45,13 @@ Assertions:
 
 2. Value assertion will be evaluated one time and either pass or fail! EX:
 
+Auto-retrying assertions​
+The following assertions will retry until the assertion passes, or the assertion timeout is reached. Note that retrying assertions are async, so you must await them.EX: await expect(locator).toHaveText(), Element matches text
+
+Non-retrying assertions​
+These assertions allow to test any conditions, but do not auto-retry. Most of the time, web pages show information asynchronously, and using non-retrying assertions can lead to a flaky test.
+Prefer auto-retrying assertions whenever possible. For more complex assertions that need to be retried, use expect.poll or expect.toPass. EX: expect(value).toContain() String contains a substring
+
 test.only: will execute this test only
 test.skip: will skip this test only
 
@@ -52,4 +59,4 @@ Strict mode violation: when more than one element found. ex: getByAltText("profi
 
 setViewPortSize({width:0000,height:0000}) to change the browser size.
 
-Screenshot, video, and trace can be turned on in config under use:.
+Screenshot, video, and trace can be turned on in config under use:
