@@ -15,7 +15,7 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  // fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -33,7 +33,9 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
     screenshot: "on-first-failure",
-    //video: 'retain-on-failure','viewport: width: 1920, height: 1080'
+    video: "retain-on-failure",
+    ignoreHTTPSErrors: true,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
@@ -43,6 +45,7 @@ export default defineConfig({
       use: {
         baseURL: "https://chroma-tech-academy.mexil.it/static_page/",
         ...devices["Desktop Chrome"],
+        viewport: { width: 1720, height: 1400 },
       },
     },
 

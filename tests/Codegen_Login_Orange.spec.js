@@ -16,4 +16,8 @@ test("test", async ({ page }) => {
     .click();
 
   await page.getByRole("menuitem", { name: "Logout" }).click();
+  await page.waitForTimeout(2000); // Wait for 2 seconds
+
+  await page.close();
+
 });
