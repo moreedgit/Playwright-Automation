@@ -26,4 +26,5 @@ test("Login test for a web application", async ({ page }) => {
   await page.screenshot({ path: "screenshots/home_page.png" });
 
   await page.close();
+  //testing github file edit
 });
