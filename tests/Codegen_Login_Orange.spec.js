@@ -19,5 +19,4 @@ test("test", async ({ page }) => {
   await page.waitForTimeout(2000); // Wait for 2 seconds
 
   await page.close();
-
 });
