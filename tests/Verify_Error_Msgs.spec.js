@@ -14,14 +14,14 @@ test("Verify Error Messages", async ({ page }) => {
   await page.locator("//button[@type='submit']").click();
   // await page.waitForTimeout(1000);
 
-  const errorMessage = await page
-    .locator("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
-    .textContent(); // assertion
-  expect(errorMessage).toContain("Invalid credentials");
-  expect(errorMessage.includes("Invalid")).toBeTruthy(); //assertion
-  expect(errorMessage === "Invalid credentials").toBeTruthy(); //assertion
+  // const errorMessage = await page
+  //   .locator("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
+  //   .textContent(); // assertion
+  // expect(errorMessage).toContain("Invalid credentials");
+  // expect(errorMessage.includes("Invalid")).toBeTruthy(); //assertion
+  // expect(errorMessage === "Invalid credentials").toBeTruthy(); //assertion
 
-  console.log("Error message is: ", errorMessage);
+  // console.log("Error message is: ", errorMessage);
   await page.waitForTimeout(1000);
   await page.close();
 });

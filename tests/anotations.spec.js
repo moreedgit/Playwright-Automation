@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 
-test.describe.only("group of tests", () => {
+test.describe("group of tests", () => {
   //describe group of tests, .only will run only this group of tests
-  test.skip("one", async ({ page }) => {
+  test("one", async ({ page }) => {
     // .skip will skip this test
     console.log("This is test one");
   });
-  test.only("two", async ({ page }) => {
+  test("two", async ({ page }) => {
     // .only will run only this test
     //test.slow(); // this will give triple or more time for for the test to run, specialy for the failing part
     //await page.locator("aaaaaaaa").click();
@@ -20,7 +20,7 @@ test.describe.only("group of tests", () => {
 
 // We can also use test.describe.parallel() to run the tests in parallel
 
-test.describe.only("group of tests 2", () => {
+test.describe("group of tests 2", () => {
   //describe group of tests, .only will run only this group of tests
   test("5", async ({ page }) => {
     // .skip will skip this test
