@@ -1,5 +1,8 @@
 1. Training: Playwright Automation by Mukesh Otwani
    Link: https://www.youtube.com/watch?v=pq20Gd4LXeI
+   commitqulity: youtube
+   Playwright automation Mukesh otwani
+   
    Playwright:
 
 site creds: john doe, admin, email: admin@practicesoftwaretesting.com, or customer@ Pass: welcome01
@@ -17,6 +20,9 @@ npm install -D @playwright/test@latest = to update playwright, use this command 
 Test Run Commands:
 npx playwright test = runs all tests in headless
 npx playwright test (testName to specify a test) —headed = runs all tests headed
+
+windows: npx playwright test tests/Verify_Text.spec.js 
+Retry failed tests: npx playwright test tests/login --retries=2
 
 npx playwright test --project=chromium --headed
 
