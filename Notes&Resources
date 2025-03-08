@@ -1,9 +1,15 @@
-1. Training: Playwright Automation by Mukesh Otwani
+1. Palywright
+   Training: Playwright Automation by Mukesh Otwani
    Link: https://www.youtube.com/watch?v=pq20Gd4LXeI
+<<<<<<< HEAD
    commitqulity: youtube
    Playwright automation Mukesh otwani
    
    Playwright:
+=======
+   Training: CommitQuality (current video: getByLocator)
+   https://www.youtube.com/watch?v=S9KewflWZSs&list=PLXgRgGX8-5UVm9yioRY329rfcfy3MusiY&index=7
+>>>>>>> bf8c3ed0f1a5c6c53f360be92487a5466d02c8c1
 
 site creds: john doe, admin, email: admin@practicesoftwaretesting.com, or customer@ Pass: welcome01
 
@@ -51,6 +57,13 @@ Assertions:
 
 2. Value assertion will be evaluated one time and either pass or fail! EX:
 
+Auto-retrying assertions​
+The following assertions will retry until the assertion passes, or the assertion timeout is reached. Note that retrying assertions are async, so you must await them.EX: await expect(locator).toHaveText(), Element matches text
+
+Non-retrying assertions​
+These assertions allow to test any conditions, but do not auto-retry. Most of the time, web pages show information asynchronously, and using non-retrying assertions can lead to a flaky test.
+Prefer auto-retrying assertions whenever possible. For more complex assertions that need to be retried, use expect.poll or expect.toPass. EX: expect(value).toContain() String contains a substring
+
 test.only: will execute this test only
 test.skip: will skip this test only
 
@@ -58,4 +71,16 @@ Strict mode violation: when more than one element found. ex: getByAltText("profi
 
 setViewPortSize({width:0000,height:0000}) to change the browser size.
 
-Screenshot, video, and trace can be turned on in config under use:.
+Screenshot, video, and trace can be turned on in config under use:
+
+--Test Annotations:
+test.describe("group name"): for grouping the test
+Some usefull methods: test.skip, test.only,
+test.fail(): will fail the test for documentation purposes
+test.slow(): will give triple or more time for for the test to run, specialy for the failing part
+
+--Locators:
+
+--ScreenSize: setViewPortSize can be set in playwright.config as below:
+...devices["Desktop Chrome"],
+viewport: { width: 1720, height: 1400 },
